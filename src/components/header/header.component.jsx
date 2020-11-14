@@ -11,8 +11,8 @@ import './header.styles.scss';
                <Logo className="logo" />
             </Link>
             <div className="options">
-               <Link className="option" to='shop' ></Link>
-               <Link className="option" to='contact' ></Link>
+               <Link className="option" to='shop' >SHOP</Link>
+               <Link className="option" to='contact'>CONTACT</Link>
 
             </div>
           </div>
