@@ -12,11 +12,14 @@ const config = {
         appId: "1:85291397130:web:fb7a70a479bd9a3c6eaff3",
         measurementId: "G-152SSMR0WY"
 };
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
+
 const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' };
-export const signInWithGoogle = () => auth.signInWithGoogle(provider);
+provider.setCustomParameters({ prompt: 'select_account' });
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
+
 export default firebase;
