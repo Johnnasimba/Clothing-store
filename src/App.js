@@ -17,12 +17,20 @@ class App extends Component {
       currentUser : null
     }
   }
+  unsubscribeFromAuth = null; 
+
   componentDidMount() {
-    auth.onAuthStateChanged(user => {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
       this.setState({ currentUser: user });
       console.log(user)
     })
   }
+
+  //WARNING! To be deprecated in React v17. Use componentDidUpdate instead.
+  componentWillUpdate(nextProps, nextState) {
+    this.unsubscribeFromAuth();
+  }
+
   render() {
     return (
       <div>
