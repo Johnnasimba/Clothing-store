@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   //WARNING! To be deprecated in React v17. Use componentDidUpdate instead.
-  componentWillUpdate(nextProps, nextState) {
+  componentDidUpdate(nextProps, nextState) {
     this.unsubscribeFromAuth();
   }
 
