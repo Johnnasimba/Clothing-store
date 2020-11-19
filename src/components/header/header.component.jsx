@@ -4,6 +4,7 @@ import { auth } from '../../firebase/firebase.utils';
 import { connect } from 'react-redux';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
+import CartIcon from '../cart-icom/cart-icon.component';
 
 import './header.styles.scss';
   const Header = ({currentUser}) => {
@@ -22,6 +23,7 @@ import './header.styles.scss';
                     <Link className="option" to='/signin'> SIGN IN</Link>    
                   )
                }
+               <CartIcon/>
             </div>
           </div>
        );
