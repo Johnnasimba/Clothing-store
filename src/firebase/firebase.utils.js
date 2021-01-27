@@ -35,6 +35,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         }
         return userRef;
 }
+// To be used to export data to firestore
 export const addCollectionAndDocuments = async (collectionKey, objectToAdd) => {
         const collectionRef = firestore.collection(collectionKey);
         const batch = firestore.batch();
@@ -45,6 +46,21 @@ export const addCollectionAndDocuments = async (collectionKey, objectToAdd) => {
 
       return  await  batch.commit() 
 }
+
+
+export const convertCollectionsSnapshotToMap = (collections) => {
+        const transformedCollections = collections.docs.map(doc => {
+                const { title, items } = doc.data();
+                return {
+                        routeName: encodeURI(title.toLowerCase()),
+                        id: doc.id,
+                        title,
+                        items
+                }
+        })
+        console.log(transformedCollections);
+} 
+
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
