@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import collectionItemComponent from '../components/collection-item/collection-item.component';
 
 const config = {
         apiKey: "AIzaSyDmDfOByXLmuVrY5rJLM2vRygtov72vSCI",
@@ -58,7 +59,10 @@ export const convertCollectionsSnapshotToMap = (collections) => {
                         items
                 }
         })
-        console.log(transformedCollections);
+     return  transformedCollections.reduce((accumulator, collection) => {
+                accumulator[collectionItemComponent.title.toLowerCase()] = collection; 
+                return accumulator;
+        } , {})
 } 
 
 
