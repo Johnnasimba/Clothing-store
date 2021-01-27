@@ -60,7 +60,7 @@ export const convertCollectionsSnapshotToMap = (collections) => {
                 }
         })
      return  transformedCollections.reduce((accumulator, collection) => {
-                accumulator[collectionItemComponent.title.toLowerCase()] = collection; 
+                accumulator[collection.title.toLowerCase()] = collection; 
                 return accumulator;
         } , {})
 } 
