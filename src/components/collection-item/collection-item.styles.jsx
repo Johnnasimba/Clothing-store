@@ -34,9 +34,10 @@ export const CollectionItemContainer = styled.div`
 `;
 
 export const AddButton = styled(CustomButton)`
-  width: 80%;
+  width: 50%;
   opacity: 0.7;
   position: absolute;
+  padding-top: 10px;
   top: 255px;
   display: none;
 
@@ -44,7 +45,7 @@ export const AddButton = styled(CustomButton)`
     display: block; 
     opacity: 0.9;
     min-width: unset;
-    padding: 0 10px;
+    padding:  10px;
   }
 `;
 
