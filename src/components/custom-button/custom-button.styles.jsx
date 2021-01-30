@@ -20,6 +20,7 @@ const invertedButtonStyles = css`
     background-color: black;
     color: white;
   }
+ 
 `;
 
 const googleSigninStyles = css`
@@ -28,6 +29,7 @@ const googleSigninStyles = css`
   &:hover {
     background-color: #357ae8;
   }
+ 
 `;
 
 const getButtonStyles = props => {
@@ -42,6 +44,7 @@ export const CustomButtonContainer = styled.button`
   min-width: 165px;
   width: auto;
   height: 50px;
+  margin: 5px;
   letter-spacing: 0.5px;
   padding: 0 35px;
   font-size: 15px;
@@ -51,6 +54,11 @@ export const CustomButtonContainer = styled.button`
   cursor: pointer;
   border: none;
   color: white;
+  @media screen and (max-width: 800px) {
+    width: 80vw;
+    margin: 5px;
+    padding: 5px
+  }
 
   ${getButtonStyles}
 `;
