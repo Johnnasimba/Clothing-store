@@ -55,7 +55,7 @@ export const CustomButtonContainer = styled.button`
   border: none;
   color: white;
   @media screen and (max-width: 800px) {
-    width: 80vw;
+    width: 80%;
     margin: 5px;
     padding: 5px
   }
